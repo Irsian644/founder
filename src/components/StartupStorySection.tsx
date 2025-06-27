@@ -30,8 +30,8 @@ const steps = [
 ];
 
 export const StartupStorySection: React.FC = () => (
-  <section id="startup-story" className="py-20 px-4 bg-gradient-to-br from-orange-100 via-blue-50 to-fuchsia-100 animate-fade-in relative overflow-hidden">
-    <div className="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-fuchsia-200 via-orange-100 to-blue-200 rounded-full blur-3xl opacity-20 pointer-events-none animate-float" />
+  <section id="startup-story" className="py-20 px-4 bg-gradient-to-br from-blue-100 via-white to-blue-200 animate-fade-in relative overflow-hidden">
+    <div className="absolute -top-24 -right-24 w-72 h-72 bg-gradient-to-br from-blue-200 via-blue-100 to-white rounded-full blur-3xl opacity-20 pointer-events-none animate-float" />
     <div className="max-w-2xl mx-auto rounded-3xl shadow-xl glass p-8 md:p-12 flex flex-col gap-8 relative z-10">
       <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 text-center animate-fade-in-up flex items-center justify-center gap-3">
         <Rocket className="h-9 w-9 text-orange-400 animate-float" />

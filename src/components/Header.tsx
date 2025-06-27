@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ isMenuOpen, setIsMenuOpen }) => 
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-2">
             <Rocket className="h-8 w-8 text-blue-600" />
-            <span className="text-xl font-bold text-gray-900">StartupHub</span>
+            <span className="text-xl font-bold text-gray-900">How to Become a Founder</span>
           </div>
           
           {/* Desktop Navigation */}

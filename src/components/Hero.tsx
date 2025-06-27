@@ -11,11 +11,11 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-fuchsia-500 via-orange-400 to-blue-600 animate-fade-in">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-blue-700 via-blue-400 to-blue-200 animate-fade-in">
       {/* Animated SVG background shapes */}
       <svg className="absolute top-0 left-0 w-full h-full opacity-30 animate-pulse" viewBox="0 0 1440 320" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path fill="#2563eb" fillOpacity="0.3" d="M0,160L60,170.7C120,181,240,203,360,197.3C480,192,600,160,720,133.3C840,107,960,85,1080,101.3C1200,117,1320,171,1380,197.3L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z" />
-        <circle cx="1200" cy="80" r="80" fill="#fb923c" fillOpacity="0.2" />
+        <circle cx="1200" cy="80" r="80" fill="#2563eb" fillOpacity="0.2" />
         <circle cx="300" cy="220" r="120" fill="#2563eb" fillOpacity="0.15" />
       </svg>
       {/* Hero Image */}
@@ -27,15 +27,15 @@ export const Hero: React.FC = () => {
       />
       <div className="relative z-10 w-full max-w-3xl mx-auto text-center flex flex-col items-center justify-center py-32 glass animate-fade-in-up">
         <h1 className="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight animate-fade-in-up">
-          <span className="block">Launch Your</span>
-          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-orange-400 via-white to-blue-600 animate-gradient-x">Tech Startup</span>
+          <span className="block">How to Become a</span>
+          <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-300 to-blue-700 animate-gradient-x">Founder</span>
         </h1>
         <p className="text-2xl md:text-3xl text-white/90 mb-10 max-w-2xl mx-auto animate-fade-in-up delay-200">
           Build, grow, and scale with a modern platform for founders. <br className="hidden md:block" /> All the tools, resources, and support you need.
         </p>
         <button
           onClick={() => scrollToSection('establishment')}
-          className="mt-4 px-10 py-5 rounded-full bg-orange-400 text-white text-xl font-bold shadow-lg hover:bg-orange-500 transition-all duration-300 animate-bounce flex items-center justify-center gap-2"
+          className="mt-4 px-10 py-5 rounded-full bg-blue-600 text-white text-xl font-bold shadow-lg hover:bg-blue-700 transition-all duration-300 animate-bounce flex items-center justify-center gap-2"
         >
           Get Started <ArrowRight className="inline ml-2 h-6 w-6 animate-wiggle" />
         </button>

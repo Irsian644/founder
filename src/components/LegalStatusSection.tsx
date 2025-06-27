@@ -82,10 +82,10 @@ const galleryImages = [
 
 export const LegalStatusSection: React.FC = () => {
   return (
-    <section id="legal-status" className="py-24 bg-gradient-to-br from-violet-200 via-orange-100 to-blue-100 relative overflow-hidden animate-fade-in">
+    <section id="legal-status" className="py-24 bg-gradient-to-br from-blue-100 via-white to-blue-200 relative overflow-hidden animate-fade-in">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute -top-32 -left-32 w-96 h-96 bg-gradient-to-br from-blue-200 via-blue-100 to-transparent rounded-full blur-3xl opacity-40" />
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tr from-orange-200 via-white to-transparent rounded-full blur-2xl opacity-30" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-tr from-blue-200 via-white to-transparent rounded-full blur-2xl opacity-30" />
       </div>
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-14">
