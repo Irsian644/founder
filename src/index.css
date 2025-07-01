@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1.2s cubic-bezier(0.4,0,0.2,1) both;
+  }
+  .animate-fade-in-up {
+    animation: fadeInUp 1.2s cubic-bezier(0.4,0,0.2,1) both;
+  }
+  .animate-gradient-x {
+    animation: gradientX 4s ease-in-out infinite alternate;
+  }
+  .glass {
+    background: rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px 0 rgba(31,38,135,0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1.5rem;
+    border: 1.5px solid rgba(255,255,255,0.24);
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  .animate-wiggle {
+    animation: wiggle 1.2s infinite;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes gradientX {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}

@@ -1,0 +1,144 @@
+{
+  "title": "How to Become a Founder Pitch Deck Template",
+  "slides": [
+    {
+      "slide": 1,
+      "title": "Company Introduction",
+      "content": [
+        "Company Name: [Your Startup Name]",
+        "Tagline: [One compelling sentence]",
+        "Founded: [Year]",
+        "Location: [Your City, Country]",
+        "Contact: [email@yourcompany.com]"
+      ]
+    },
+    {
+      "slide": 2,
+      "title": "Problem",
+      "content": [
+        "What problem are you solving?",
+        "Who experiences this problem?",
+        "How big is this problem?",
+        "Current solutions and their limitations",
+        "Why now? (market timing)"
+      ]
+    },
+    {
+      "slide": 3,
+      "title": "Solution",
+      "content": [
+        "Your unique solution",
+        "Key features and benefits",
+        "How it solves the problem better",
+        "Demo or product screenshots",
+        "Competitive advantages"
+      ]
+    },
+    {
+      "slide": 4,
+      "title": "Market Opportunity",
+      "content": [
+        "Total Addressable Market (TAM): €X billion",
+        "Serviceable Addressable Market (SAM): €X million",
+        "Serviceable Obtainable Market (SOM): €X million",
+        "Market specifics",
+        "Growth trends and drivers"
+      ]
+    },
+    {
+      "slide": 5,
+      "title": "Business Model",
+      "content": [
+        "How you make money",
+        "Revenue streams",
+        "Pricing strategy",
+        "Customer acquisition cost (CAC)",
+        "Lifetime value (LTV)"
+      ]
+    },
+    {
+      "slide": 6,
+      "title": "Traction",
+      "content": [
+        "Key metrics and growth",
+        "Customer testimonials",
+        "Partnerships",
+        "Revenue milestones",
+        "User engagement data"
+      ]
+    },
+    {
+      "slide": 7,
+      "title": "Competition",
+      "content": [
+        "Competitive landscape",
+        "Direct and indirect competitors",
+        "Your competitive advantages",
+        "Market positioning",
+        "Barriers to entry"
+      ]
+    },
+    {
+      "slide": 8,
+      "title": "Marketing & Sales Strategy",
+      "content": [
+        "Go-to-market strategy",
+        "Customer acquisition channels",
+        "Sales process",
+        "Marketing budget allocation",
+        "Partnership strategy"
+      ]
+    },
+    {
+      "slide": 9,
+      "title": "Team",
+      "content": [
+        "Founder profiles and experience",
+        "Key team members",
+        "Advisory board",
+        "Hiring plans",
+        "Team gaps to fill"
+      ]
+    },
+    {
+      "slide": 10,
+      "title": "Financial Projections",
+      "content": [
+        "3-year revenue forecast",
+        "Key financial metrics",
+        "Break-even analysis",
+        "Unit economics",
+        "Assumptions and scenarios"
+      ]
+    },
+    {
+      "slide": 11,
+      "title": "Funding Request",
+      "content": [
+        "Amount seeking: €X",
+        "Use of funds breakdown",
+        "Milestones to achieve",
+        "Expected timeline",
+        "Exit strategy"
+      ]
+    },
+    {
+      "slide": 12,
+      "title": "Contact & Next Steps",
+      "content": [
+        "Thank you",
+        "Contact information",
+        "Website and social media",
+        "Call to action",
+        "Questions?"
+      ]
+    }
+  ],
+  "notes": [
+    "Keep slides visual with minimal text",
+    "Use high-quality images and charts",
+    "Practice your presentation timing",
+    "Prepare for Q&A session",
+    "Customize for each investor audience"
+  ]
+}
