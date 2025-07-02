@@ -1,8 +1,8 @@
 import React from 'react';
-import { Banknote, Globe, Users, Zap, ArrowRight, CheckCircle, Building2, Calendar, DollarSign, Target, Award, TrendingUp } from 'lucide-react';
+import { Banknote, Globe, Users, Zap, ArrowRight, CheckCircle, AlertTriangle, Building2, Calendar, DollarSign, Target, Award, TrendingUp } from 'lucide-react';
 import grantsImg from '../Foto_protik/WhatsApp Image 2025-06-20 at 09.58.48.jpeg';
 
-const featuredGrants = [
+const startupGrants = [
   {
     icon: <Banknote className="h-8 w-8 text-blue-600" />,
     title: 'Innovation Fund',
@@ -50,90 +50,69 @@ const featuredGrants = [
     verified: true,
     category: 'Accelerator',
     difficulty: 'Medium'
+  }
+];
+
+const ngoGrants = [
+  {
+    icon: <Building2 className="h-8 w-8 text-purple-600" />,
+    title: 'Slovak Republic Small Grants',
+    desc: 'Funding for NGOs and civil society organizations (NOT for commercial startups).',
+    eligibility: 'Registered NGOs, civil society projects',
+    amount: '€2,000 - €15,000',
+    deadline: 'Annual call',
+    link: 'https://www.mzv.sk/en/web/tirana-en/slovakaid/small-grants',
+    forNGOs: true,
+    category: 'NGO Only',
+    difficulty: 'Medium'
   },
   {
-    icon: <Building2 className="h-8 w-8 text-blue-600" />,
-    title: 'Regional Development Fund',
-    desc: 'Support for startups contributing to regional economic development.',
-    eligibility: 'Startups creating local jobs, registered in Albania',
-    amount: '€8,000 - €40,000',
-    deadline: 'Quarterly applications',
-    link: 'https://regional-dev.gov.al',
-    verified: true,
-    category: 'Government',
-    difficulty: 'Low'
-  },
-  {
-    icon: <Target className="h-8 w-8 text-blue-600" />,
-    title: 'Women Entrepreneurs Fund',
-    desc: 'Dedicated funding for female-led startups and businesses.',
-    eligibility: 'Female founders, majority women ownership',
-    amount: '€3,000 - €20,000',
-    deadline: 'Open applications',
-    link: 'https://women-entrepreneurs.al',
-    verified: true,
-    category: 'Special Focus',
-    difficulty: 'Low'
+    icon: <Users className="h-8 w-8 text-purple-600" />,
+    title: 'Visegrad Fund',
+    desc: 'Grants for cultural and educational NGO projects.',
+    eligibility: 'NGOs, cultural organizations, educational institutions',
+    amount: '€5,000 - €40,000',
+    deadline: 'Multiple deadlines yearly',
+    link: 'https://www.visegradfund.org',
+    forNGOs: true,
+    category: 'NGO Only',
+    difficulty: 'High'
   }
 ];
 
 const applicationSteps = [
   {
     step: 1,
-    title: 'Research & Eligibility',
-    desc: 'Verify requirements and prepare documentation',
-    icon: <CheckCircle className="h-6 w-6 text-blue-500" />,
+    title: 'Research & Eligibility Check',
+    desc: 'Verify you meet all requirements before applying',
+    icon: <CheckCircle className="h-6 w-6 text-green-500" />,
     details: ['Check eligibility criteria', 'Review application guidelines', 'Gather required documents']
   },
   {
     step: 2,
-    title: 'Prepare Application',
-    desc: 'Create compelling proposal with clear objectives',
+    title: 'Prepare Documentation',
+    desc: 'Business plan, financial projections, team CVs',
     icon: <CheckCircle className="h-6 w-6 text-blue-500" />,
     details: ['Write project description', 'Prepare budget breakdown', 'Include team information']
   },
   {
     step: 3,
-    title: 'Submit & Track',
-    desc: 'Submit before deadline and monitor progress',
-    icon: <CheckCircle className="h-6 w-6 text-blue-500" />,
+    title: 'Submit Application',
+    desc: 'Follow guidelines exactly, submit before deadline',
+    icon: <CheckCircle className="h-6 w-6 text-orange-500" />,
     details: ['Submit complete application', 'Get confirmation receipt', 'Track application status']
   },
   {
     step: 4,
     title: 'Follow Up',
-    desc: 'Respond to requests and prepare for interviews',
-    icon: <CheckCircle className="h-6 w-6 text-blue-500" />,
+    desc: 'Track application status and respond to requests',
+    icon: <CheckCircle className="h-6 w-6 text-purple-500" />,
     details: ['Answer evaluator questions', 'Prepare for presentations', 'Provide additional documents']
-  }
-];
-
-const successTips = [
-  {
-    icon: <Calendar className="h-6 w-6 text-blue-600" />,
-    title: 'Start Early',
-    tip: 'Begin applications 2-3 months before deadlines to ensure quality preparation'
-  },
-  {
-    icon: <Target className="h-6 w-6 text-blue-600" />,
-    title: 'Match Criteria',
-    tip: 'Only apply to grants where you meet 100% of the eligibility requirements'
-  },
-  {
-    icon: <TrendingUp className="h-6 w-6 text-blue-600" />,
-    title: 'Show Impact',
-    tip: 'Clearly demonstrate how funding will create measurable value and growth'
-  },
-  {
-    icon: <Award className="h-6 w-6 text-blue-600" />,
-    title: 'Professional Presentation',
-    tip: 'Use clear formatting, proper grammar, and include all requested materials'
   }
 ];
 
 const getDifficultyColor = (difficulty: string) => {
   switch (difficulty) {
-    case 'Low': return 'bg-green-100 text-green-800';
     case 'Medium': return 'bg-yellow-100 text-yellow-800';
     case 'High': return 'bg-red-100 text-red-800';
     default: return 'bg-gray-100 text-gray-800';
@@ -146,7 +125,7 @@ const getCategoryColor = (category: string) => {
     case 'International': return 'bg-purple-100 text-purple-800';
     case 'EU Program': return 'bg-indigo-100 text-indigo-800';
     case 'Accelerator': return 'bg-orange-100 text-orange-800';
-    case 'Special Focus': return 'bg-pink-100 text-pink-800';
+    case 'NGO Only': return 'bg-purple-100 text-purple-800';
     default: return 'bg-gray-100 text-gray-800';
   }
 };
@@ -176,12 +155,12 @@ export const GrantsSection: React.FC = () => (
               </div>
             </span>
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">
-              Startup Funding
+              Funding Opportunities
             </span>
           </h2>
           
           <p className="text-xl md:text-2xl text-gray-600 leading-relaxed font-medium">
-            Access verified funding opportunities for Albanian startups. We've researched eligibility requirements, deadlines, and success rates to help you find the right fit.
+            Verified funding sources for new startups. We've researched eligibility requirements and application deadlines to save you time.
           </p>
         </div>
         
@@ -201,23 +180,23 @@ export const GrantsSection: React.FC = () => (
         </div>
       </div>
 
-      {/* Enhanced Grants Grid */}
+      {/* Startup-Specific Grants */}
       <div className="mb-20">
         <div className="flex items-center gap-4 mb-12">
           <div className="flex items-center gap-3">
             <div className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl">
-              <Award className="h-8 w-8 text-white" />
+              <Zap className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">Available Grants</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">For Startups & Businesses</h3>
           </div>
           <div className="flex-1 h-px bg-gradient-to-r from-gray-300 to-transparent" />
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-          {featuredGrants.map((grant, i) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {startupGrants.map((grant, i) => (
             <div key={i} className="group relative hover-lift">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-gray-50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg p-8 border border-gray-100 hover:border-blue-200 transition-all duration-300 h-full flex flex-col">
+              <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-lg p-8 border border-gray-100 hover:border-blue-200 transition-all duration-300">
                 {/* Header */}
                 <div className="flex items-start gap-4 mb-6">
                   <div className="p-3 bg-blue-50 rounded-2xl group-hover:bg-blue-100 transition-colors">
@@ -244,29 +223,23 @@ export const GrantsSection: React.FC = () => (
                 </div>
                 
                 {/* Content */}
-                <p className="text-gray-600 mb-6 leading-relaxed flex-grow">{grant.desc}</p>
+                <p className="text-gray-600 mb-6 leading-relaxed">{grant.desc}</p>
                 
                 {/* Details */}
                 <div className="space-y-3 mb-6">
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                    <span className="text-sm font-medium text-gray-700 flex items-center gap-2">
-                      <DollarSign className="h-4 w-4 text-blue-500" />
-                      Amount
-                    </span>
+                    <span className="text-sm font-medium text-gray-700">Amount:</span>
                     <span className="text-sm text-blue-600 font-semibold">{grant.amount}</span>
                   </div>
                   <div className="flex items-center justify-between p-3 bg-gray-50 rounded-xl">
-                    <span className="text-sm font-medium text-gray-700 flex items-center gap-2">
-                      <Calendar className="h-4 w-4 text-blue-500" />
-                      Deadline
-                    </span>
+                    <span className="text-sm font-medium text-gray-700">Deadline:</span>
                     <span className="text-sm text-orange-600 font-semibold">{grant.deadline}</span>
                   </div>
                 </div>
                 
                 {/* Eligibility */}
                 <div className="p-4 bg-blue-50 rounded-xl mb-6">
-                  <h5 className="text-sm font-semibold text-blue-800 mb-2">Eligibility Requirements</h5>
+                  <h5 className="text-sm font-semibold text-blue-800 mb-2">Eligibility:</h5>
                   <p className="text-sm text-blue-700">{grant.eligibility}</p>
                 </div>
                 
@@ -286,14 +259,82 @@ export const GrantsSection: React.FC = () => (
         </div>
       </div>
 
+      {/* NGO Grants (Clearly Separated) */}
+      <div className="mb-20">
+        <div className="bg-purple-50 border-l-4 border-purple-400 p-6 mb-8 rounded-r-2xl">
+          <div className="flex items-center gap-3 mb-3">
+            <AlertTriangle className="h-6 w-6 text-purple-600" />
+            <h3 className="text-2xl font-bold text-purple-800">For NGOs & Non-Profits Only</h3>
+          </div>
+          <p className="text-purple-700 text-lg">
+            These grants are specifically for registered NGOs and civil society organizations, 
+            <strong> not for commercial startups or businesses</strong>.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {ngoGrants.map((grant, i) => (
+            <div key={i} className="group relative hover-lift">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative bg-purple-50/80 backdrop-blur-sm rounded-3xl shadow-lg p-8 border border-purple-200 hover:border-purple-300 transition-all duration-300">
+                {/* Header */}
+                <div className="flex items-start gap-4 mb-6">
+                  <div className="p-3 bg-purple-100 rounded-2xl group-hover:bg-purple-200 transition-colors">
+                    {grant.icon}
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-xl font-bold text-purple-900 mb-2">{grant.title}</h4>
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${getCategoryColor(grant.category)}`}>
+                      {grant.category}
+                    </span>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <p className="text-purple-700 mb-6 leading-relaxed">{grant.desc}</p>
+                
+                {/* Details */}
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-center justify-between p-3 bg-purple-100 rounded-xl">
+                    <span className="text-sm font-medium text-purple-700">Amount:</span>
+                    <span className="text-sm text-purple-600 font-semibold">{grant.amount}</span>
+                  </div>
+                  <div className="flex items-center justify-between p-3 bg-purple-100 rounded-xl">
+                    <span className="text-sm font-medium text-purple-700">Deadline:</span>
+                    <span className="text-sm text-orange-600 font-semibold">{grant.deadline}</span>
+                  </div>
+                </div>
+                
+                {/* Eligibility */}
+                <div className="p-4 bg-purple-100 rounded-xl mb-6">
+                  <h5 className="text-sm font-semibold text-purple-800 mb-2">Eligibility:</h5>
+                  <p className="text-sm text-purple-700">{grant.eligibility}</p>
+                </div>
+                
+                {/* CTA */}
+                <a
+                  href={grant.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-gradient-to-r from-purple-600 to-purple-700 text-white py-4 rounded-2xl font-bold hover:from-purple-700 hover:to-purple-800 transition-all duration-300 flex items-center justify-center gap-3 group-hover:scale-105"
+                >
+                  Learn More
+                  <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Enhanced Application Process */}
       <div className="mb-20">
         <div className="flex items-center gap-4 mb-12">
           <div className="flex items-center gap-3">
-            <div className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl">
-              <Target className="h-8 w-8 text-white" />
+            <div className="p-3 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl">
+              <CheckCircle className="h-8 w-8 text-white" />
             </div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">Application Process</h3>
+            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">How to Apply Successfully</h3>
           </div>
           <div className="flex-1 h-px bg-gradient-to-r from-gray-300 to-transparent" />
         </div>
@@ -337,69 +378,21 @@ export const GrantsSection: React.FC = () => (
         </div>
       </div>
 
-      {/* Enhanced Success Tips */}
-      <div className="mb-16">
-        <div className="flex items-center gap-4 mb-12">
-          <div className="flex items-center gap-3">
-            <div className="p-3 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl">
-              <TrendingUp className="h-8 w-8 text-white" />
-            </div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900">Success Tips</h3>
+      {/* Success Tips */}
+      <div className="bg-gradient-to-r from-green-600 to-blue-600 rounded-3xl p-12 text-white text-center shadow-xl animate-fade-in-up">
+        <h3 className="text-3xl font-bold mb-6">💡 Pro Tips for Grant Success</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          <div>
+            <h4 className="font-semibold mb-3 text-xl">Start Early</h4>
+            <p className="opacity-90">Begin applications 2-3 months before deadlines</p>
           </div>
-          <div className="flex-1 h-px bg-gradient-to-r from-gray-300 to-transparent" />
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {successTips.map((tip, i) => (
-            <div key={i} className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg p-6 border border-gray-100 hover:border-blue-200 transition-all duration-300 hover-lift">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-blue-50 rounded-xl">
-                  {tip.icon}
-                </div>
-                <h4 className="font-bold text-gray-900">{tip.title}</h4>
-              </div>
-              <p className="text-gray-600 text-sm leading-relaxed">{tip.tip}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Enhanced CTA */}
-      <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-700 rounded-3xl blur-xl opacity-20" />
-        <div className="relative bg-white/90 backdrop-blur-sm rounded-3xl shadow-xl p-12 text-center border border-gray-100">
-          <div className="mb-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 rounded-full text-blue-700 text-sm font-medium mb-4">
-              <Award className="h-4 w-4" />
-              Expert Support Available
-            </div>
-            <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Need Help with Your Application?
-            </h3>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Our team has helped founders secure over €2M in grants. Get personalized guidance for your application.
-            </p>
+          <div>
+            <h4 className="font-semibold mb-3 text-xl">Follow Guidelines</h4>
+            <p className="opacity-90">Read requirements carefully and follow formatting rules</p>
           </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => window.open('https://calendly.com/how-to-become-a-founder/grant-consultation', '_blank')}
-              className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-2xl font-bold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              <Calendar className="h-5 w-5" />
-              Book Free Consultation
-            </button>
-            
-            <button 
-              onClick={() => {
-                const el = document.getElementById('resources');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="inline-flex items-center gap-3 bg-white text-blue-700 px-8 py-4 rounded-2xl font-bold border-2 border-blue-200 hover:bg-blue-50 hover:border-blue-300 transition-all duration-300 transform hover:scale-105"
-            >
-              <ArrowRight className="h-5 w-5" />
-              Download Templates
-            </button>
+          <div>
+            <h4 className="font-semibold mb-3 text-xl">Show Impact</h4>
+            <p className="opacity-90">Clearly demonstrate how funding will create value</p>
           </div>
         </div>
       </div>
